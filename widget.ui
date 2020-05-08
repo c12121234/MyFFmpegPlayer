@@ -6,14 +6,81 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1280</width>
+    <height>720</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Widget</string>
   </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="1" column="0">
+    <widget class="QPushButton" name="pushButton">
+     <property name="styleSheet">
+      <string notr="true">color: rgb(52, 101, 164);
+gridline-color: rgb(193, 125, 17);
+background-color: rgb(78, 154, 6);</string>
+     </property>
+     <property name="text">
+      <string>Open</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="3">
+    <widget class="FFmpegNV12Widget" name="Video"/>
+   </item>
+   <item row="1" column="2">
+    <spacer name="horizontalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="2" column="0" colspan="3">
+    <widget class="FFmpegSlider" name="horizontalSlider">
+     <property name="maximum">
+      <number>999</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QPushButton" name="BtnStart">
+     <property name="styleSheet">
+      <string notr="true">color: rgb(52, 101, 164);
+gridline-color: rgb(193, 125, 17);
+background-color: rgb(78, 154, 6);</string>
+     </property>
+     <property name="text">
+      <string>Play</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>FFmpegSlider</class>
+   <extends>QSlider</extends>
+   <header>ffmpegslider.h</header>
+  </customwidget>
+  <customwidget>
+   <class>FFmpegNV12Widget</class>
+   <extends>QOpenGLWidget</extends>
+   <header>ffmpegnv12widget.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
+ <slots>
+  <slot>HandleOpenFile()</slot>
+ </slots>
 </ui>
